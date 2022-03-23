@@ -9,7 +9,7 @@ import { User } from 'src/app/model/users';
 export class ListComponent implements OnInit {
 
   @Input() public userList?:User[];
-
+  @Input() public listBackgroundColor:string = 'tomato'
   constructor() { }
 
   ngOnInit(): void {

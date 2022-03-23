@@ -1,7 +1,8 @@
 <h1>Angular Pipe</h1>
 
 
-<app-list [userList]="users"></app-list>
+<app-list [userList]="listData.userArray"
+[listBackgroundColor]="listData.backGround"></app-list>
 <app-buttons 
 (arrayChanged)="onArrayChanged($event)"
 (userChanged)="onUserChanged()"

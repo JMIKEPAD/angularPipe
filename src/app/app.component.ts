@@ -8,6 +8,8 @@ import { User } from './model/users';
 })
 export class AppComponent {
   title = 'angular-pipe';
+
+  
   public users: User[] = [
     { name: 'Fjoralba', ranking: 1 },
     { name: 'Simone', ranking: 5 },
@@ -18,13 +20,24 @@ export class AppComponent {
     { name: 'Andrea', ranking: 6 },
   ];
 
+  public listData:any = {};
+
+  constructor(){
+    this.listData.backGround = 'green'
+    this.listData.userArray = this.users;
+  }
+
+
   onUserChanged() {
     this.users[0].name = 'Marta';
+    this.listData.userArray=this.users;
   }
   onUserAdded(user: User) {
     this.users.push(user);
+    this.listData.userArray=this.users;
   }
   onArrayChanged(usersArray: User[]) {
     this.users = usersArray;
+    this.listData.userArray=this.users;
   }
 }
