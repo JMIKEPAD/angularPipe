@@ -5,16 +5,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListComponent } from './components/list/list.component';
 import { ButtonsComponent } from './components/buttons/buttons.component';
+import { HttpClientModule } from '@angular/common/http';
+import { CapitalizeFirstPipe } from './pipes/capitalize-first.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListComponent,
-    ButtonsComponent
+    ButtonsComponent,
+    CapitalizeFirstPipe
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

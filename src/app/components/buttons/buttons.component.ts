@@ -22,14 +22,14 @@ export class ButtonsComponent implements OnInit {
   }
   changeArray(){
     const newArray:User[]=[
-      { name: 'Michael', ranking:3},
-      { name: 'Francesca', ranking:1},
-      { name: 'Nicolò', ranking:2},
+      { name: 'michael', ranking:3},
+      { name: 'francesca', ranking:1},
+      { name: 'nicolò', ranking:2},
     ]
     this.arrayChanged.emit(newArray);
   }
   addUser(){
-    const user:User = {name: 'Andrea a', ranking:100}
+    const user:User = {name: 'andrea a', ranking:100}
     this.userAdded.emit(user);
   }
  }
