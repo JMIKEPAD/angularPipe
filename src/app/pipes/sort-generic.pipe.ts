@@ -10,14 +10,19 @@ export class SortGenericPipe implements PipeTransform {
     if (args.length > 0 && value.length > 0) {
       const propertyName = args[0];
       const firstUser = value[0];
-
+    
       if (firstUser[propertyName]) {
-        value.sort((a,b) => a[propertyName] - b[propertyName])
+        if (typeof firstUser[propertyName] === 'number') {
+        return value.sort((a,b) => (a[propertyName] as number) -(b[propertyName] as number));
+        } else {
+          return value.sort((a,b) => (a[propertyName] as string) .localeCompare(b[propertyName] as string));
+        } 
+      } else {
+        return value as User[];
       }
-    } else {
-      return value as User[];
-    }
-    return value ;
+    
   }
+  return value as User[]
 
+  }
 }
