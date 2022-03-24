@@ -1,6 +1,6 @@
 import { ValueConverter } from '@angular/compiler/src/render3/view/template';
 import { Pipe, PipeTransform } from '@angular/core';
-import { User } from '../model/user';
+import { User } from 'src/app/model/user';
 
 @Pipe({
   name: 'sortUsersByRanking'
