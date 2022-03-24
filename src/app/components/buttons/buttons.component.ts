@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { User } from 'src/app/model/users';
+import { User } from 'src/app/model/user';
 
 @Component({
   selector: 'app-buttons',
@@ -8,30 +8,35 @@ import { User } from 'src/app/model/users';
 })
 export class ButtonsComponent implements OnInit {
 
-  @Output() public userChanged = new EventEmitter<any>(); 
-  @Output() public arrayChanged = new EventEmitter<User[]>();
-  @Output() public userAdded = new EventEmitter<User>();
+  @Output() public userChanged = new EventEmitter<any>();     //output --> genera eventi --> questo di tipo <any>
+  @Output() public arrayChanged = new EventEmitter<User[]>(); //output --> genera eventi --> questo di tipo <User[]>
+  @Output() public userAdded = new EventEmitter<User>();      //output --> genera eventi --> questo di tipo <User>
 
   constructor() { }
 
   ngOnInit(): void {
-    console.log('ciao');
+    console.log("ciao");
   }
+
+
   changeUser(){
-     this.userChanged.emit();
+    this.userChanged.emit();
   }
+
+
   changeArray(){
-    const newArray:User[]=[
-      { name: 'michael', ranking:3},
-      { name: 'francesca', ranking:1},
-      { name: 'nicolò', ranking:2},
-    ]
+    const newArray: User[] = [
+      {name: "michael", ranking: 2},
+      {name: "francesca", ranking: 1},
+      {name: "nicolò", ranking: 3},
+    ];
     this.arrayChanged.emit(newArray);
   }
+
+
   addUser(){
-    const user:User = {name: 'andrea a', ranking:100}
+    const user: User = {name: "andrea a", ranking: 100};
     this.userAdded.emit(user);
   }
- }
-
-
+  
+}

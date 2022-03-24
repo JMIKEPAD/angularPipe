@@ -5,14 +5,11 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class CapitalizeFirstPipe implements PipeTransform {
 
-  transform(value: string, ...args: string[]): string {
-    
-    const firstChar = value[0];
-    const upperFirst = firstChar.toUpperCase();
-    const restChar = value.slice(1);
-    return upperFirst + restChar;
-  
-  
+  transform(value: string, ...args: unknown[]): string {                     //unica funzione del pipe che gestisce come cambiare/utilizzare il pipe
+    //console.log("pippo");                                                    //rispetto alla funzione scritta nel listComponent, pippo logga solo 7 volte (anzichè 28)
+    const firstChar = value[0].toUpperCase();
+    const remainingChars = value.slice(1);
+    return firstChar + remainingChars;
   }
-}
 
+}
